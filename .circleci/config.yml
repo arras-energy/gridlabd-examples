@@ -24,7 +24,7 @@ jobs:
      - run:
          name: Run IEEE 8500 Simulation 
          command: |
-            cd ../IEEE8500
+            cd IEEE8500
             mkdir -p final_output
             more config/local.glm
             gridlabd ieee8500.glm
