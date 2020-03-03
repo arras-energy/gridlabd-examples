@@ -1,0 +1,69 @@
+// Dynamic loads
+// Copyright (C) 2020, Stanford University
+// Author: aivanova@slac.stanford.edu
+
+module residential;
+object transformer_configuration {
+	name xfmr_config_A;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	install_type POLETOP;
+	powerA_rating 75;
+	primary_voltage 2401;
+	secondary_voltage 120.000 V;
+	impedance 0.006+0.0136j;
+}
+object transformer_configuration {
+	name xfmr_config_B;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	install_type POLETOP;
+	powerB_rating 75;
+	primary_voltage 2401 V;
+	secondary_voltage 120.000 V;
+	impedance 0.006+0.0136j;
+}
+object transformer_configuration {
+	name xfmr_config_C;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	install_type POLETOP;
+	powerC_rating 75;
+	primary_voltage 2401 V;
+	secondary_voltage 120.000 V;
+	impedance 0.006+0.0136j;
+}
+
+global int32 SEQ_CUSTID 0;
+#set allow_reinclude=true
+
+#include using(AREA=A,LOADID=101,PHASE=A,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=102,PHASE=A,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=103,PHASE=A,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=201,PHASE=A,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=202,PHASE=A,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=203,PHASE=A,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=301,PHASE=A,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=302,PHASE=A,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=303,PHASE=A,COUNT=10) "house.glm"
+
+
+#include using(AREA=A,LOADID=101,PHASE=B,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=102,PHASE=B,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=103,PHASE=B,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=201,PHASE=B,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=202,PHASE=B,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=203,PHASE=B,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=301,PHASE=B,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=302,PHASE=B,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=303,PHASE=B,COUNT=10) "house.glm"
+
+#include using(AREA=A,LOADID=101,PHASE=C,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=102,PHASE=C,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=103,PHASE=C,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=201,PHASE=C,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=202,PHASE=C,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=203,PHASE=C,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=301,PHASE=C,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=302,PHASE=C,COUNT=10) "house.glm"
+#include using(AREA=A,LOADID=303,PHASE=C,COUNT=10) "house.glm"
+
+
+#define NHOUSES=${SEQ_CUSTID}

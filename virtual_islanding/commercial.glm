@@ -1,0 +1,206 @@
+object ceus {
+	parent supernode_101;
+	name large_office;
+	filename "ceus_input/FCZ01_RETL.csv";
+	floor_area 100 ksf;
+	weather weather;
+	composition "Cooling:{ZR:0.9;PR:0.1;PI:0.01;Tc:100;Tc0:70;Tc1:100}";
+	composition "Ventilation:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Water_Heating:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Refrigeration:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Exterior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Interior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Office_Equipment:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Miscellaneous:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Motors:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Air_Compressors:{ZR:0.9;PR:0.1;PI:0.01}";
+	object recorder {
+		file load_ceus_101.csv;
+		property total_real_power[kW];
+		interval ${RECORDINTERVAL};
+	};
+}
+
+object ceus {
+	parent supernode_102;
+	name small_office;
+	filename "ceus_input/FCZ01_SOFF.csv";
+	floor_area 10 ksf;
+	weather weather;
+	composition "Heating:{ZR:0.9;PR:0.1;PI:0.01;Th:-100;Th0:50;Th1:20;}";
+	composition "Cooling:{ZR:0.9;PR:0.1;PI:0.01;Tc:100;Tc0:70;Tc1:100;}";
+	composition "Ventilation:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Water_Heating:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Refrigeration:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Exterior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Interior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Office_Equipment:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Miscellaneous:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Motors:{ZR:0.9;PR:0.1;PI:0.01}";
+	object recorder {
+		file load_ceus_102.csv;
+		property total_real_power[kW];
+		interval ${RECORDINTERVAL};
+	};
+}
+object ceus {
+	parent supernode_103;
+	name refrigerated_warehouse;
+	filename "ceus_input/FCZ01_REFW.csv";
+	floor_area 10 ksf;
+	weather weather;
+	composition "Cooling:{ZR:0.9;PR:0.1;PI:0.01;Tc:100;Tc0:70;Tc1:100;}";
+	composition "Ventilation:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Water_Heating:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Refrigeration:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Exterior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Interior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Office_Equipment:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Miscellaneous:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Motors:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Air_Compressors:{ZR:0.9;PR:0.1;PI:0.01}";
+	object recorder {
+		file load_ceus_103.csv;
+		property total_real_power[kW];
+		interval ${RECORDINTERVAL};
+	};
+}
+object ceus {
+	parent supernode_201;
+	name grocery;
+	filename "ceus_input/FCZ01_GROC.csv";
+	floor_area 10 ksf;
+	weather weather;
+	composition "Cooling:{ZR:0.9;PR:0.1;PI:0.01;Tc:100;Tc0:70;Tc1:100;}";
+	composition "Ventilation:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Refrigeration:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Exterior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Interior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Office_Equipment:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Miscellaneous:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Motors:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Air_Compressors:{ZR:0.9;PR:0.1;PI:0.01}";
+	object recorder {
+		file load_ceus_201.csv;
+		property total_real_power[kW];
+		interval ${RECORDINTERVAL};
+	};
+}
+
+object ceus {
+	parent supernode_202;
+	name all_office;
+	filename "ceus_input/FCZ01_AOFF.csv";
+	floor_area 10 ksf;
+	weather weather;
+	composition "Heating:{ZR:0.9;PR:0.1;PI:0.01;Th:-100;Th0:50;Th1:20;}";
+	composition "Cooling:{ZR:0.9;PR:0.1;PI:0.01;Tc:100;Tc0:70;Tc1:100;}";
+	composition "Ventilation:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Water_Heating:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Refrigeration:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Exterior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Interior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Office_Equipment:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Miscellaneous:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Motors:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Air_Compressors:{ZR:0.9;PR:0.1;PI:0.01}";
+	object recorder {
+		file load_ceus_202.csv;
+		property total_real_power[kW];
+		interval ${RECORDINTERVAL};
+	};
+}
+
+object ceus {
+	parent supernode_203;
+	name college;
+	filename "ceus_input/FCZ01_COLL.csv";
+	floor_area 10 ksf;
+	weather weather;
+	composition "Heating:{ZR:0.9;PR:0.1;PI:0.01;Th:-100;Th0:50;Th1:20;}";
+	composition "Cooling:{ZR:0.9;PR:0.1;PI:0.01;Tc:100;Tc0:70;Tc1:100;}";
+	composition "Ventilation:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Refrigeration:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Exterior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Interior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Office_Equipment:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Miscellaneous:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Motors:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Air_Compressors:{ZR:0.9;PR:0.1;PI:0.01}";
+	object recorder {
+		file load_ceus_203.csv;
+		property total_real_power[kW];
+		interval ${RECORDINTERVAL};
+	};
+}
+
+object ceus {
+	parent supernode_301;
+	name all_warehouse;
+	filename "ceus_input/FCZ01_AWHS.csv";
+	floor_area 10 ksf;
+	weather weather;
+	composition "Cooling:{ZR:0.9;PR:0.1;PI:0.01;Tc:100;Tc0:70;Tc1:100;}";
+	composition "Ventilation:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Water_Heating:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Refrigeration:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Exterior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Interior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Office_Equipment:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Miscellaneous:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Motors:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Air_Compressors:{ZR:0.9;PR:0.1;PI:0.01}";
+	object recorder {
+		file load_ceus_301.csv;
+		property total_real_power[kW];
+		interval ${RECORDINTERVAL};
+	};
+}
+
+object ceus {
+	parent supernode_302;
+	name health;
+	filename "ceus_input/FCZ01_HLTH.csv";
+	floor_area 10 ksf;
+	weather weather;
+	composition "Heating:{ZR:0.9;PR:0.1;PI:0.01;Th:-100;Th0:50;Th1:20;}";
+	composition "Cooling:{ZR:0.9;PR:0.1;PI:0.01;Tc:100;Tc0:70;Tc1:100;}";
+	composition "Ventilation:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Water_Heating:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Refrigeration:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Exterior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Interior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Office_Equipment:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Miscellaneous:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Motors:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Air_Compressors:{ZR:0.9;PR:0.1;PI:0.01}";
+	object recorder {
+		file load_ceus_302.csv;
+		property total_real_power[kW];
+		interval ${RECORDINTERVAL};
+	};
+}
+
+object ceus {
+	parent supernode_303;
+	name lodging;
+	filename "ceus_input/FCZ01_LODG.csv";
+	floor_area 10 ksf;
+	weather weather;
+	composition "Heating:{ZR:0.9;PR:0.1;PI:0.01;Th:-100;Th0:50;Th1:20;}";
+	composition "Cooling:{ZR:0.9;PR:0.1;PI:0.01;Tc:100;Tc0:70;Tc1:100;}";
+	composition "Ventilation:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Refrigeration:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Exterior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Interior_Lighting:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Office_Equipment:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Miscellaneous:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Motors:{ZR:0.9;PR:0.1;PI:0.01}";
+	composition "Air_Compressors:{ZR:0.9;PR:0.1;PI:0.01}";
+	object recorder {
+		file load_ceus_303.csv;
+		property total_real_power[kW];
+		interval ${RECORDINTERVAL};
+	};
+}
+

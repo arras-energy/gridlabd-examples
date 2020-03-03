@@ -1,0 +1,19 @@
+//////////////CONFIG//////////////////////////////////
+#define STARTTIME="2020-01-30T00:00:00-05:00"
+#define STOPTIME="2020-01-31T00:00:00-05:00"
+#define RECORDINTERVAL=30
+
+#define TIMEZONE=EST+5EDT
+
+#define LOCATION=LA_CA //LA_CA //BUR_VT
+
+#define LOADS=on
+
+#define MYSQL_AMI=off
+#define SOLAR=on //behind the meter solar
+#define GRID_BATTERY=off // grid side battery 
+#define GRID_SOLAR=on // grid side solar
+
+#define VOLT_POWER_DUMP=off //FIX
+
+#define COMMERCIALLOADFLAG=OFF //ON
