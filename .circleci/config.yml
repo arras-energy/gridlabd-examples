@@ -28,10 +28,5 @@ jobs:
             mkdir -p final_output
             more config/local.glm
             gridlabd ieee8500.glm
-      - run:
-          name: Electrification use case 
-          command: |
-            cd Electrification_usecase
-            sh main.sh
      - store_artifacts:
            path: /root/project/final_output
