@@ -15,19 +15,6 @@ jobs:
          command: |
            gridlabd --version
            gridlabd --origin
-     - run:
-         name: Run Virtual Islanding Simulation 
-         command: |
-            cd virtual_islanding
-            mkdir output
-            python3 run_gridlabd_main.py
-     - run:
-         name: Run IEEE 8500 Simulation 
-         command: |
-            cd IEEE8500
-            mkdir -p final_output
-            more config/local.glm
-            gridlabd ieee8500.glm
       - run:
           name: Electrification use case 
           command: |
