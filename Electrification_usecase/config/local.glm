@@ -1,0 +1,4 @@
+#set minimum_timestep=60
+#define GAS_COOL=no
+#define UPGRADE=no
+
