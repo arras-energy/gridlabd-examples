@@ -14,6 +14,7 @@ jobs:
       - run:
           name: Run the simulation
           command: |
+            cd Electrification_usecase
             sh main.sh
       - store_artifacts: 
             path: /root/project/output
