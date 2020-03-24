@@ -238,9 +238,12 @@ global int32 SEQ_CUSTID 0;
 #endif //ELEC_COUNT
 
 #if GAS_COUNT!=0 
-#include using(LOADID=1,PHASE=A,COUNT=${GAS_COUNT},GAS=yes) "house.glm"
-#include using(LOADID=1,PHASE=B,COUNT=${GAS_COUNT},GAS=yes) "house.glm"
-#include using(LOADID=1,PHASE=C,COUNT=${GAS_COUNT},GAS=yes) "house.glm"
+#include using(LOADID=1,PHASE=A,COUNT=${BASELINE_AC},GAS=yes,GAS_COOL=yes) "house.glm"
+#include using(LOADID=1,PHASE=B,COUNT=${BASELINE_AC},GAS=yes,GAS_COOL=yes) "house.glm"
+#include using(LOADID=1,PHASE=C,COUNT=${BASELINE_AC},GAS=yes,GAS_COOL=yes) "house.glm"
+#include using(LOADID=1,PHASE=A,COUNT=${BASELINE_NOAC},GAS=yes,GAS_COOL=no) "house.glm"
+#include using(LOADID=1,PHASE=B,COUNT=${BASELINE_NOAC},GAS=yes,GAS_COOL=no) "house.glm"
+#include using(LOADID=1,PHASE=C,COUNT=${BASELINE_NOAC},GAS=yes,GAS_COOL=no) "house.glm"
 #endif //GAS_COUNT
 
 

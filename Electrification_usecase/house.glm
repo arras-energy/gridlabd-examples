@@ -1,7 +1,12 @@
 object transformer {
 #if GAS==yes 
-	name xfrm_${LOADID}${PHASE}_GAS;
-	to node_${LOADID}${PHASE}_GAS;
+#if GAS_COOL==no
+	name xfrm_${LOADID}${PHASE}_GAS_NOAC;
+	to node_${LOADID}${PHASE}_GAS_NOAC;
+#else
+	name xfrm_${LOADID}${PHASE}_GAS_AC;
+	to node_${LOADID}${PHASE}_GAS_AC; 
+#endif //GAS_COOL
 #else 
 #if UPGRADE==yes
 	name xfrm_${LOADID}${PHASE}_ELEC_UPGRADE;
@@ -17,7 +22,11 @@ object transformer {
 }
 object triplex_node {
 #if GAS==yes
-	name node_${LOADID}${PHASE}_GAS;
+#if GAS_COOL==no
+	name node_${LOADID}${PHASE}_GAS_NOAC;
+#else 
+	name node_${LOADID}${PHASE}_GAS_AC;
+#endif //GAS_COOL
 #else 
 #if UPGRADE==yes
 	name node_${LOADID}${PHASE}_ELEC_UPGRADE;
@@ -33,7 +42,11 @@ object triplex_meter:..${COUNT} {
 	name `meter_{SEQ_CUSTID:INC}`;
 	price 0.2;
 #if GAS==yes
-	parent node_${LOADID}${PHASE}_GAS;
+#if GAS_COOL==no
+	parent node_${LOADID}${PHASE}_GAS_NOAC;
+#else 
+	parent node_${LOADID}${PHASE}_GAS_AC;
+#endif //GAS_COOL
 #else 
 #if UPGRADE==yes
 	parent node_${LOADID}${PHASE}_ELEC_UPGRADE;
@@ -45,7 +58,11 @@ object triplex_meter:..${COUNT} {
 	nominal_voltage 120;
 	object house { 
 #if GAS==yes
-		name `house_{SEQ_CUSTID}_GAS`;
+#if GAS_COOL==no
+		name `house_{SEQ_CUSTID}_GAS_NOAC`;
+#else 
+		name `house_{SEQ_CUSTID}_GAS_NOAC`;
+#endif //GAS_COOL
 #else 
 #if UPGRADE==yes
 	name `house_{SEQ_CUSTID}_ELEC_UPGRADE`;
@@ -62,7 +79,7 @@ object triplex_meter:..${COUNT} {
 #if GAS_COOL==no
 		cooling_system_type NONE;
 #else 
-		cooling_system_type HEAT_PUMP;	
+		cooling_system_type ELECTRIC;	
 #endif //GAS_COOL
 		gas_enduses "WATERHEATER|RANGE|DRYER";
 		heating_system_type GAS;

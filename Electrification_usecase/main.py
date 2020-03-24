@@ -1,6 +1,7 @@
 import csv 
 import os
 import glob
+import sys
 from shutil import copyfile
 
 gas_count = 0 
@@ -21,8 +22,10 @@ with open('config/simulation_configuration.csv', newline='') as csvfile :
 			stoptime=row[1]
 		elif 'Weather File' in row[0] : 
 			weather_file=row[1]
+		elif 'Baseline Number of houses with AC per Phase' in row[0] :
+			baseline_ac=row[1]
 		elif 'Run Name' in row[0] or ''==row[0] : 
-			continue 
+			continue
 		else :
 			elec_count = round(total_count*float(row[1]))
 			gas_count = total_count-elec_count
@@ -35,10 +38,18 @@ with open('config/simulation_configuration.csv', newline='') as csvfile :
 			fw.write('\n#define GAS_COUNT=' + str(gas_count))
 			fw.write('\n#define ELEC_COUNT=' + str(elec_count))
 			fw.write('\n#define WEATHER=' + weather_file)
+			fw.write('\n#define BASELINE_AC=' + str(baseline_ac))
+			fw.write('\n#define BASELINE_NOAC=' + str(gas_count-int(baseline_ac)))
 			if baseline_count : 
 				fw.write('\n#define BASELINE_COUNT=' + str(baseline_count))
+				if int(baseline_ac)>baseline_count : 
+					print("ERROR: Number baseline houses with gas and AC is higher than total baseline count. Revise the simulation_configuration.csv")
+					sys.exit(1)
 			else : 
 				baseline_count=round(total_count*0.50)
+				if int(baseline_ac)>baseline_count : 
+					print("ERROR: Number baseline houses with gas and AC is higher than total baseline count. Revise the simulation_configuration.csv")
+					sys.exit(1)
 				fw.write('\n#print Electrification Baseline is not provided, assuming 50% electric')
 			upgrade_count=elec_count-baseline_count
 			fw.write('\n#define UPGRADE_COUNT=' + str(upgrade_count))
