@@ -1,0 +1,26 @@
+#define YEAR=2021
+#define NODE=SANMATO_6_N001
+
+#python caiso.py ${YEAR} ${NODE}
+#python rates.py ${YEAR} ${NODE}
+
+#set minimum_timestep=3600
+
+clock
+{
+    timezone "PST+8PDT";
+    starttime "2021-01-01 00:00:00 PST";
+    stoptime "2022-01-01 00:00:00 PST";
+}
+
+object billdump
+{
+    filename "residential.csv";
+    meter_type TRIPLEX_METER;
+}
+
+object billdump
+{
+    filename "commercial.csv";
+    meter_type "METER";
+}

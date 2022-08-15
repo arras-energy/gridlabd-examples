@@ -1,0 +1,3 @@
+[submodule "tariff-portfolio-analysis/models"]
+	path = tariff-portfolio-analysis/models
+	url = https://github.com/slacgismo/gridlabd-models
