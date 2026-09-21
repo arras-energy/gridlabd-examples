@@ -1,0 +1,21 @@
+// Parametric load randomizer model
+//
+// Usage:
+//
+//   #include using(LOAD=<objname>) "randomizer.glm"
+
+object randomizer
+{
+    parent "${LOAD}";
+    scale "type:uniform(0,1); refresh:1h";
+    on_init "python:randomizer.init";
+    on_precommit "python:randomizer.precommit";
+}
+
+object recorder
+{
+    parent "${LOAD}";
+    file "${model}/${LOAD}.csv";
+    property constant_power_A,constant_power_B,constant_power_C,constant_current_A,constant_current_B,constant_current_C,constant_impedance_A,constant_impedance_B,constant_impedance_C,voltage_A,voltage_B,voltage_C;
+    interval 1h;
+};
