@@ -15,6 +15,8 @@ The results are posted in folders for each feeder model.  To view the results ru
     gridlabd shell
     marimo run plot_results.py
 
+Note that all voltage angles are plotted with respect the phases' base angle, i.e., 0 for phase A, -120 for phase B, and 120 for phase C.
+
 ## Changing the study size
 
 The default study size is about 750 trials (equivalent to about 1 month of hourly trials).  To increase the study size, change the `stoptime` value on line 16 of the file `study_model.glm`.  
