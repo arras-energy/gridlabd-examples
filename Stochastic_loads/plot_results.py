@@ -62,6 +62,7 @@ def _(complex_ui, df, load_ui, np, plt, scipy, voltage_ui):
     fig, _ax = plt.subplots(3, 3, figsize=(16, 16))
     _units = {"Power":"kW", "Current":"A", "Admittance":"mS"}
     _zip = {"Power":"P", "Current": "I", "Admittance": "1/Z"}
+    _base = {"A":0, "B":-120, "C":120}
     for _col, _channel in enumerate(_units):
         for _row, _phase in enumerate("ABC"):
             _column = f"{load_ui.value} {_channel} {_phase}"
@@ -81,7 +82,7 @@ def _(complex_ui, df, load_ui, np, plt, scipy, voltage_ui):
                         _Y = np.abs(df[_voltage]) / 1000
                         _ylabel = "Voltage magnitude (kV)"
                     case "Angle":
-                        _Y = np.angle(df[_voltage]) * 180 / np.pi
+                        _Y = np.angle(df[_voltage]) * 180 / np.pi - _base[_phase]
                         _ylabel = "Voltage angle (deg)"
                     case _:
                         raise ValueError(f"{voltage_ui.value} is invalid")

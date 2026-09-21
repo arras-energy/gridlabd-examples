@@ -6,14 +6,14 @@
 
 #system mkdir -p ${model}
 
-#include "${model}.glm"
+#include "${model}/${model}.glm"
 
 // setup an pseudo time-series randomized load trial
 clock
 {
     timezone "UTC0";
     starttime "2000-01-01 00:00:00 UTC";
-    stoptime "2000-12-31 23:59:59 UTC";
+    stoptime "2000-01-07 23:59:59 UTC";
 }
 
 // format the CSV output in a pandas-friendly way
